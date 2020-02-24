@@ -16,7 +16,7 @@ We created a single-layer LSTM with 256 units. Before entering the LSTM layer, t
 
 We trained the model with categorical cross-entropy loss on 100 epochs.
 
-Given any seed text, the model can predict any number of future words.
+Given any seed text, the model can predict any number of future words. The trained models are in the "trained-models" folder.
 
 ## The results
 
@@ -25,3 +25,5 @@ In our blog post, we discussed some generated tweets from seed text that include
 We created an R Shiny app to allow users to interact with the model. The app allows a user to input any seed text (starting words) and any number of words (less than 50) to predict. The app is available here:
 
 https://dribbleanalytics.shinyapps.io/woj-shams-twitter-ai/
+
+The code for the shiny app is available in the "shiny-app" folder. It includes the trained models and csv files of data that is available in other folders. The app is contained in "app.R"; "publish.R" is only to test and push the app. The only other file in that folder that is not available elsewhere is the "shiny_twitter.py" file. This file has two functions that allow us to clean the data and load the models for the Shiny app. Using reticulate, we load in this file and use its cleaning and predicting functions.
